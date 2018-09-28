@@ -1,3 +1,4 @@
+speakers = ["Edsger", "Ada", "Charles", "Alan", "Grace", "Linus", "Matz"]
 
 def badge_maker(name)
   "Hello, my name is #{name}."
@@ -19,16 +20,19 @@ def assign_rooms(speakers)
   room_array
 end
 
-def printer
-speakers = ["Edsger", "Ada", "Charles", "Alan", "Grace", "Linus", "Matz"]
-  badge_message = batch_badge_creator(speakers)
-  badge_message.each do |badge|
-    puts badge
-  end
-  room_message = assign_rooms(speakers)
-  room_message.each do |room|
-    puts room
-  end
+def print(array)
+    array.each do |element|
+    puts element
+    end
 end
+
+def printer(speakers)
+  speaker_badges = batch_badge_creator(speakers)
+  speaker_rooms = assign_rooms(speakers)
+  print(speaker_badges)
+  print(speaker_rooms)
+end
+
+printer(speakers)
 
   
